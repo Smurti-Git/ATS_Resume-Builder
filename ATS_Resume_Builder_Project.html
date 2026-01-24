@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script class="injected-ffc2e83d85">
+        (function () {
+            'use strict'; function l(a) { var c = 0; return function () { return c < a.length ? { done: !1, value: a[c++] } : { done: !0 } } } function r(a) { var c = typeof Symbol != "undefined" && Symbol.iterator && a[Symbol.iterator]; if (c) return c.call(a); if (typeof a.length == "number") return { next: l(a) }; throw Error(String(a) + " is not an iterable or ArrayLike"); } var t = typeof Object.defineProperties == "function" ? Object.defineProperty : function (a, c, g) { if (a == Array.prototype || a == Object.prototype) return a; a[c] = g.value; return a };
+            function u(a) { a = ["object" == typeof globalThis && globalThis, a, "object" == typeof window && window, "object" == typeof self && self, "object" == typeof global && global]; for (var c = 0; c < a.length; ++c) { var g = a[c]; if (g && g.Math == Math) return g } throw Error("Cannot find global object"); } var v = u(this); function x(a, c) { if (c) a: { var g = v; a = a.split("."); for (var h = 0; h < a.length - 1; h++) { var m = a[h]; if (!(m in g)) break a; g = g[m] } a = a[a.length - 1]; h = g[a]; c = c(h); c != h && c != null && t(g, a, { configurable: !0, writable: !0, value: c }) } }
+            function y(a) { if (!(a instanceof Object)) throw new TypeError("Iterator result " + a + " is not an object"); } function z() { this.o = !1; this.j = null; this.u = void 0; this.g = 1; this.i = this.l = 0; this.C = this.h = null } function A(a) { if (a.o) throw new TypeError("Generator is already running"); a.o = !0 } z.prototype.v = function (a) { this.u = a }; function B(a, c) { a.h = { K: c, L: !0 }; a.g = a.l || a.i } z.prototype.N = function () { return this.g }; z.prototype.getNextAddress = z.prototype.N; z.prototype.O = function () { return this.u };
+            z.prototype.getYieldResult = z.prototype.O; z.prototype.return = function (a) { this.h = { return: a }; this.g = this.i }; z.prototype["return"] = z.prototype.return; z.prototype.P = function (a) { this.h = { B: a }; this.g = this.i }; z.prototype.jumpThroughFinallyBlocks = z.prototype.P; z.prototype.A = function (a, c) { this.g = c; return { value: a } }; z.prototype.yield = z.prototype.A; z.prototype.T = function (a, c) { a = r(a); var g = a.next(); y(g); if (g.done) this.u = g.value, this.g = c; else return this.j = a, this.A(g.value, c) }; z.prototype.yieldAll = z.prototype.T;
+            z.prototype.B = function (a) { this.g = a }; z.prototype.jumpTo = z.prototype.B; z.prototype.F = function () { this.g = 0 }; z.prototype.jumpToEnd = z.prototype.F; z.prototype.H = function (a, c) { this.l = a; c != void 0 && (this.i = c) }; z.prototype.setCatchFinallyBlocks = z.prototype.H; z.prototype.S = function (a) { this.l = 0; this.i = a || 0 }; z.prototype.setFinallyBlock = z.prototype.S; z.prototype.G = function (a, c) { this.g = a; this.l = c || 0 }; z.prototype.leaveTryBlock = z.prototype.G; z.prototype.D = function (a) { this.l = a || 0; a = this.h.K; this.h = null; return a };
+            z.prototype.enterCatchBlock = z.prototype.D; z.prototype.J = function (a, c, g) { g ? this.C[g] = this.h : this.C = [this.h]; this.l = a || 0; this.i = c || 0 }; z.prototype.enterFinallyBlock = z.prototype.J; z.prototype.R = function (a, c) { c = this.C.splice(c || 0)[0]; (c = this.h = this.h || c) ? c.L ? this.g = this.l || this.i : c.B != void 0 && this.i < c.B ? (this.g = c.B, this.h = null) : this.g = this.i : this.g = a }; z.prototype.leaveFinallyBlock = z.prototype.R; z.prototype.M = function (a) { return new C(a) }; z.prototype.forIn = z.prototype.M;
+            function C(a) { this.i = a; this.g = []; for (var c in a) this.g.push(c); this.g.reverse() } C.prototype.h = function () { for (; this.g.length > 0;) { var a = this.g.pop(); if (a in this.i) return a } return null }; C.prototype.getNext = C.prototype.h; function F(a) { this.g = new z; this.h = a } function G(a, c) { A(a.g); var g = a.g.j; if (g) return H(a, "return" in g ? g["return"] : function (h) { return { value: h, done: !0 } }, c, a.g.return); a.g.return(c); return I(a) }
+            function H(a, c, g, h) { try { var m = c.call(a.g.j, g); y(m); if (!m.done) return a.g.o = !1, m; var n = m.value } catch (f) { return a.g.j = null, B(a.g, f), I(a) } a.g.j = null; h.call(a.g, n); return I(a) } function I(a) { for (; a.g.g;)try { var c = a.h(a.g); if (c) return a.g.o = !1, { value: c.value, done: !1 } } catch (g) { a.g.u = void 0, B(a.g, g) } a.g.o = !1; if (a.g.h) { c = a.g.h; a.g.h = null; if (c.L) throw c.K; return { value: c.return, done: !0 } } return { value: void 0, done: !0 } }
+            function J(a) { this.next = function (c) { A(a.g); a.g.j ? c = H(a, a.g.j.next, c, a.g.v) : (a.g.v(c), c = I(a)); return c }; this.throw = function (c) { A(a.g); a.g.j ? c = H(a, a.g.j["throw"], c, a.g.v) : (B(a.g, c), c = I(a)); return c }; this.return = function (c) { return G(a, c) }; this[Symbol.iterator] = function () { return this } } function K(a) { function c(h) { return a.next(h) } function g(h) { return a.throw(h) } return new Promise(function (h, m) { function n(f) { f.done ? h(f.value) : Promise.resolve(f.value).then(c, g).then(n, m) } n(a.next()) }) }
+            x("Symbol", function (a) { function c(n) { if (this instanceof c) throw new TypeError("Symbol is not a constructor"); return new g(h + (n || "") + "_" + m++, n) } function g(n, f) { this.g = n; t(this, "description", { configurable: !0, writable: !0, value: f }) } if (a) return a; g.prototype.toString = function () { return this.g }; var h = "jscomp_symbol_" + (Math.random() * 1E9 >>> 0) + "_", m = 0; return c });
+            x("Symbol.iterator", function (a) { if (a) return a; a = Symbol("Symbol.iterator"); t(Array.prototype, a, { configurable: !0, writable: !0, value: function () { return L(l(this)) } }); return a }); function L(a) { a = { next: a }; a[Symbol.iterator] = function () { return this }; return a }
+            x("Promise", function (a) {
+                function c(f) { this.h = 0; this.i = void 0; this.g = []; this.u = !1; var b = this.j(); try { f(b.resolve, b.reject) } catch (d) { b.reject(d) } } function g() { this.g = null } function h(f) { return f instanceof c ? f : new c(function (b) { b(f) }) } if (a) return a; g.prototype.h = function (f) { if (this.g == null) { this.g = []; var b = this; this.i(function () { b.l() }) } this.g.push(f) }; var m = v.setTimeout; g.prototype.i = function (f) { m(f, 0) }; g.prototype.l = function () {
+                    for (; this.g && this.g.length;) {
+                        var f = this.g; this.g = []; for (var b = 0; b < f.length; ++b) {
+                            var d =
+                                f[b]; f[b] = null; try { d() } catch (e) { this.j(e) }
+                        }
+                    } this.g = null
+                }; g.prototype.j = function (f) { this.i(function () { throw f; }) }; c.prototype.j = function () { function f(e) { return function (k) { d || (d = !0, e.call(b, k)) } } var b = this, d = !1; return { resolve: f(this.F), reject: f(this.l) } }; c.prototype.F = function (f) { if (f === this) this.l(new TypeError("A Promise cannot resolve to itself")); else if (f instanceof c) this.H(f); else { a: switch (typeof f) { case "object": var b = f != null; break a; case "function": b = !0; break a; default: b = !1 }b ? this.D(f) : this.o(f) } };
+                c.prototype.D = function (f) { var b = void 0; try { b = f.then } catch (d) { this.l(d); return } typeof b == "function" ? this.J(b, f) : this.o(f) }; c.prototype.l = function (f) { this.v(2, f) }; c.prototype.o = function (f) { this.v(1, f) }; c.prototype.v = function (f, b) { if (this.h != 0) throw Error("Cannot settle(" + f + ", " + b + "): Promise already settled in state" + this.h); this.h = f; this.i = b; this.h === 2 && this.G(); this.C() }; c.prototype.G = function () { var f = this; m(function () { if (f.A()) { var b = v.console; typeof b !== "undefined" && b.error(f.i) } }, 1) }; c.prototype.A =
+                    function () { if (this.u) return !1; var f = v.CustomEvent, b = v.Event, d = v.dispatchEvent; if (typeof d === "undefined") return !0; typeof f === "function" ? f = new f("unhandledrejection", { cancelable: !0 }) : typeof b === "function" ? f = new b("unhandledrejection", { cancelable: !0 }) : (f = v.document.createEvent("CustomEvent"), f.initCustomEvent("unhandledrejection", !1, !0, f)); f.promise = this; f.reason = this.i; return d(f) }; c.prototype.C = function () { if (this.g != null) { for (var f = 0; f < this.g.length; ++f)n.h(this.g[f]); this.g = null } }; var n = new g; c.prototype.H =
+                        function (f) { var b = this.j(); f.I(b.resolve, b.reject) }; c.prototype.J = function (f, b) { var d = this.j(); try { f.call(b, d.resolve, d.reject) } catch (e) { d.reject(e) } }; c.prototype.then = function (f, b) { function d(p, w) { return typeof p == "function" ? function (D) { try { e(p(D)) } catch (E) { k(E) } } : w } var e, k, q = new c(function (p, w) { e = p; k = w }); this.I(d(f, e), d(b, k)); return q }; c.prototype.catch = function (f) { return this.then(void 0, f) }; c.prototype.I = function (f, b) {
+                            function d() {
+                                switch (e.h) {
+                                    case 1: f(e.i); break; case 2: b(e.i); break; default: throw Error("Unexpected state: " +
+                                        e.h);
+                                }
+                            } var e = this; this.g == null ? n.h(d) : this.g.push(d); this.u = !0
+                        }; c.resolve = h; c.reject = function (f) { return new c(function (b, d) { d(f) }) }; c.race = function (f) { return new c(function (b, d) { for (var e = r(f), k = e.next(); !k.done; k = e.next())h(k.value).I(b, d) }) }; c.all = function (f) { var b = r(f), d = b.next(); return d.done ? h([]) : new c(function (e, k) { function q(D) { return function (E) { p[D] = E; w--; w == 0 && e(p) } } var p = [], w = 0; do p.push(void 0), w++, h(d.value).I(q(p.length - 1), k), d = b.next(); while (!d.done) }) }; return c
+            });
+            function M(a, c) { return Object.prototype.hasOwnProperty.call(a, c) } x("Object.is", function (a) { return a ? a : function (c, g) { return c === g ? c !== 0 || 1 / c === 1 / g : c !== c && g !== g } }); x("Array.prototype.includes", function (a) { return a ? a : function (c, g) { var h = this; h instanceof String && (h = String(h)); var m = h.length; g = g || 0; for (g < 0 && (g = Math.max(g + m, 0)); g < m; g++) { var n = h[g]; if (n === c || Object.is(n, c)) return !0 } return !1 } });
+            x("String.prototype.includes", function (a) { return a ? a : function (c, g) { if (this == null) throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined"); if (c instanceof RegExp) throw new TypeError("First argument to String.prototype.includes must not be a regular expression"); return this.indexOf(c, g || 0) !== -1 } });
+            x("WeakMap", function (a) {
+                function c(d) { this.g = (b += Math.random() + 1).toString(); if (d) { d = r(d); for (var e; !(e = d.next()).done;)e = e.value, this.set(e[0], e[1]) } } function g() { } function h(d) { var e = typeof d; return e === "object" && d !== null || e === "function" } function m(d) { if (!M(d, f)) { var e = new g; t(d, f, { value: e }) } } function n(d) { var e = Object[d]; e && (Object[d] = function (k) { if (k instanceof g) return k; Object.isExtensible(k) && m(k); return e(k) }) } if (function () {
+                    if (!a || !Object.seal) return !1; try {
+                        var d = Object.seal({}), e = Object.seal({}),
+                        k = new a([[d, 2], [e, 3]]); if (k.get(d) != 2 || k.get(e) != 3) return !1; k.delete(d); k.set(e, 4); return !k.has(d) && k.get(e) == 4
+                    } catch (q) { return !1 }
+                }()) return a; var f = "$jscomp_hidden_" + Math.random(); n("freeze"); n("preventExtensions"); n("seal"); var b = 0; c.prototype.set = function (d, e) { if (!h(d)) throw Error("Invalid WeakMap key"); m(d); if (!M(d, f)) throw Error("WeakMap key fail: " + d); d[f][this.g] = e; return this }; c.prototype.get = function (d) { return h(d) && M(d, f) ? d[f][this.g] : void 0 }; c.prototype.has = function (d) {
+                    return h(d) && M(d,
+                        f) && M(d[f], this.g)
+                }; c.prototype.delete = function (d) { return h(d) && M(d, f) && M(d[f], this.g) ? delete d[f][this.g] : !1 }; return c
+            });
+            x("Map", function (a) {
+                function c() { var b = {}; return b.m = b.next = b.head = b } function g(b, d) { var e = b[1]; return L(function () { if (e) { for (; e.head != b[1];)e = e.m; for (; e.next != e.head;)return e = e.next, { done: !1, value: d(e) }; e = null } return { done: !0, value: void 0 } }) } function h(b, d) {
+                    var e = d && typeof d; e == "object" || e == "function" ? n.has(d) ? e = n.get(d) : (e = "" + ++f, n.set(d, e)) : e = "p_" + d; var k = b[0][e]; if (k && M(b[0], e)) for (b = 0; b < k.length; b++) { var q = k[b]; if (d !== d && q.key !== q.key || d === q.key) return { id: e, list: k, index: b, entry: q } } return {
+                        id: e,
+                        list: k, index: -1, entry: void 0
+                    }
+                } function m(b) { this[0] = {}; this[1] = c(); this.size = 0; if (b) { b = r(b); for (var d; !(d = b.next()).done;)d = d.value, this.set(d[0], d[1]) } } if (function () {
+                    if (!a || typeof a != "function" || !a.prototype.entries || typeof Object.seal != "function") return !1; try {
+                        var b = Object.seal({ x: 4 }), d = new a(r([[b, "s"]])); if (d.get(b) != "s" || d.size != 1 || d.get({ x: 4 }) || d.set({ x: 4 }, "t") != d || d.size != 2) return !1; var e = d.entries(), k = e.next(); if (k.done || k.value[0] != b || k.value[1] != "s") return !1; k = e.next(); return k.done || k.value[0].x !=
+                            4 || k.value[1] != "t" || !e.next().done ? !1 : !0
+                    } catch (q) { return !1 }
+                }()) return a; var n = new WeakMap; m.prototype.set = function (b, d) { b = b === 0 ? 0 : b; var e = h(this, b); e.list || (e.list = this[0][e.id] = []); e.entry ? e.entry.value = d : (e.entry = { next: this[1], m: this[1].m, head: this[1], key: b, value: d }, e.list.push(e.entry), this[1].m.next = e.entry, this[1].m = e.entry, this.size++); return this }; m.prototype.delete = function (b) {
+                    b = h(this, b); return b.entry && b.list ? (b.list.splice(b.index, 1), b.list.length || delete this[0][b.id], b.entry.m.next = b.entry.next,
+                        b.entry.next.m = b.entry.m, b.entry.head = null, this.size--, !0) : !1
+                }; m.prototype.clear = function () { this[0] = {}; this[1] = this[1].m = c(); this.size = 0 }; m.prototype.has = function (b) { return !!h(this, b).entry }; m.prototype.get = function (b) { return (b = h(this, b).entry) && b.value }; m.prototype.entries = function () { return g(this, function (b) { return [b.key, b.value] }) }; m.prototype.keys = function () { return g(this, function (b) { return b.key }) }; m.prototype.values = function () { return g(this, function (b) { return b.value }) }; m.prototype.forEach =
+                    function (b, d) { for (var e = this.entries(), k; !(k = e.next()).done;)k = k.value, b.call(d, k[1], k[0], this) }; m.prototype[Symbol.iterator] = m.prototype.entries; var f = 0; return m
+            });
+            x("Set", function (a) {
+                function c(g) { this.g = new Map; if (g) { g = r(g); for (var h; !(h = g.next()).done;)this.add(h.value) } this.size = this.g.size } if (function () {
+                    if (!a || typeof a != "function" || !a.prototype.entries || typeof Object.seal != "function") return !1; try {
+                        var g = Object.seal({ x: 4 }), h = new a(r([g])); if (!h.has(g) || h.size != 1 || h.add(g) != h || h.size != 1 || h.add({ x: 4 }) != h || h.size != 2) return !1; var m = h.entries(), n = m.next(); if (n.done || n.value[0] != g || n.value[1] != g) return !1; n = m.next(); return n.done || n.value[0] == g || n.value[0].x != 4 ||
+                            n.value[1] != n.value[0] ? !1 : m.next().done
+                    } catch (f) { return !1 }
+                }()) return a; c.prototype.add = function (g) { g = g === 0 ? 0 : g; this.g.set(g, g); this.size = this.g.size; return this }; c.prototype.delete = function (g) { g = this.g.delete(g); this.size = this.g.size; return g }; c.prototype.clear = function () { this.g.clear(); this.size = 0 }; c.prototype.has = function (g) { return this.g.has(g) }; c.prototype.entries = function () { return this.g.entries() }; c.prototype.values = function () { return this.g.values() }; c.prototype.keys = c.prototype.values; c.prototype[Symbol.iterator] =
+                    c.prototype.values; c.prototype.forEach = function (g, h) { var m = this; this.g.forEach(function (n) { return g.call(h, n, n, m) }) }; return c
+            }); (function () {
+                function a() {
+                    return n ? Promise.resolve(n) : f ? f : f = fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function (b) { if (!b.ok) throw Error("HTTP error! status: " + b.status + " fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json"); return b.json() }).then(function (b) {
+                        if (!Array.isArray(b)) throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+                        return n = b
+                    }).catch(function (b) { console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.", b); f = null; throw b; })
+                } function c(b) {
+                    var d, e, k, q; return K(new J(new F(function (p) {
+                        switch (p.g) {
+                            case 1: d = (b.textContent || "").trim(); if (!d || b.classList.contains("js-replaced-missing-icon") && d === "radio_button_unchecked") return p.return(); e = window.getComputedStyle(b); if (e.display === "none" || e.visibility === "hidden") return p.return();
+                                p.H(2); return p.A(a(), 4); case 4: k = p.u; p.G(3); break; case 2: return p.D(), console.warn('IconChecker: Skipping check for icon "' + d + '" as valid names could not be loaded.'), p.return(); case 3: (q = k.includes(d)) ? b.classList.contains("js-replaced-missing-icon") && b.classList.remove("js-replaced-missing-icon") : d === "radio_button_unchecked" && b.classList.contains("js-replaced-missing-icon") || (b.textContent = "radio_button_unchecked", b.classList.add("js-replaced-missing-icon")), p.F()
+                        }
+                    })))
+                } function g(b) {
+                    b = b === void 0 ?
+                        document.body : b; b.querySelectorAll(m).forEach(function (d) { c(d) })
+                } function h() {
+                    a().catch(function () { }); document.fonts.ready.then(function () {
+                        requestAnimationFrame(function () {
+                            g(document.body); (new MutationObserver(function (b) {
+                                var d = new Set; b = r(b); for (var e = b.next(); !e.done; e = b.next())if (e = e.value, e.type === "childList") e.addedNodes.forEach(function (q) { q.nodeType === Node.ELEMENT_NODE && (q.matches(m) && d.add(q), q.querySelectorAll(m).forEach(function (p) { d.add(p) })) }); else if (e.type === "attributes" && e.attributeName ===
+                                    "class") { var k = e.target; e.target.nodeType === Node.ELEMENT_NODE && k.matches(m) && d.add(k) } else e.type === "characterData" && e.target.parentNode && (e = e.target.parentNode, e.nodeType === Node.ELEMENT_NODE && e.matches(m) && d.add(e)); d.size > 0 && setTimeout(function () { d.forEach(function (q) { c(q) }) }, 500)
+                            })).observe(document.body, { childList: !0, subtree: !0, attributes: !0, attributeFilter: ["class"], characterData: !0 })
+                        })
+                    }).catch(function (b) { console.error("IconChecker: Font loading error. Scanning icons anyway.", b); requestAnimationFrame(function () { g(document.body) }) })
+                }
+                var m = ["material-icons", "material-symbols-outlined", "material-symbols-rounded", "material-symbols-sharp"].map(function (b) { return "." + b }).join(","), n = null, f = null; document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", function () { h() }) : h()
+            })();
+        }).call(this);
+
+
+    </script>
+
+    <meta name="surface-hint" content="desktop-responsive" data-hint="injected-ffc2e83d85">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Resume Engine | ATS Optimized 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* ATS STRICT PRINT STYLES */
+        @media print {
+            body {
+                background: white !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .resume-sheet {
+                box-shadow: none !important;
+                border: none !important;
+                margin: 0 !important;
+                padding: 0.5in !important;
+                width: 100% !important;
+                max-width: none !important;
+                min-height: auto !important;
+                /* ATS Standard Fonts */
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+
+            .section-heading {
+                border-bottom: 1.5pt solid #000 !important;
+                margin-top: 15pt !important;
+                margin-bottom: 8pt !important;
+                font-size: 12pt !important;
+            }
+
+            .material-symbols-outlined {
+                display: none !important;
+            }
+
+            /* Icons confuse some ATS parsers */
+        }
+
+        .resume-sheet {
+            background: white;
+            min-height: 11in;
+            width: 8.5in;
+            padding: 0.6in;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid #e2e8f0;
+            font-family: 'Arial', sans-serif;
+            /* Set for browser preview to match print */
+        }
+
+        .section-heading {
+            border-bottom: 2px solid #111;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 800;
+            color: #111;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            margin-top: 16px;
+        }
+
+        /* Editor UI Styles */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .editor-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: #64748b;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 0.65rem;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+        }
+
+        .btn-add {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #4f46e5;
+            margin-top: 12px;
+            cursor: pointer;
+            padding: 8px 14px;
+            border-radius: 8px;
+            background: #f5f3ff;
+            width: fit-content;
+        }
+
+        .btn-remove {
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 20px;
+            padding: 2px;
+        }
+
+        .btn-remove:hover {
+            color: #dc2626;
+            transform: scale(1.1);
+        }
+
+        .ats-tip {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 8px;
+            font-size: 0.75rem;
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+    </style>
+    <style>
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia: ;
+            --tw-contain-size: ;
+            --tw-contain-layout: ;
+            --tw-contain-paint: ;
+            --tw-contain-style:
+        }
+
+        /* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb
+        }
+
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        button,
+        input:where([type=button]),
+        input:where([type=reset]),
+        input:where([type=submit]) {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+            vertical-align: middle
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden]:where(:not([hidden=until-found])) {
+            display: none
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .right-3 {
+            right: 0.75rem
+        }
+
+        .right-4 {
+            right: 1rem
+        }
+
+        .top-3 {
+            top: 0.75rem
+        }
+
+        .top-4 {
+            top: 1rem
+        }
+
+        .z-50 {
+            z-index: 50
+        }
+
+        .mb-2 {
+            margin-bottom: 0.5rem
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem
+        }
+
+        .mb-5 {
+            margin-bottom: 1.25rem
+        }
+
+        .mb-6 {
+            margin-bottom: 1.5rem
+        }
+
+        .mb-8 {
+            margin-bottom: 2rem
+        }
+
+        .flex {
+            display: flex
+        }
+
+        .grid {
+            display: grid
+        }
+
+        .h-16 {
+            height: 4rem
+        }
+
+        .h-32 {
+            height: 8rem
+        }
+
+        .h-screen {
+            height: 100vh
+        }
+
+        .h-24 {
+            height: 6rem
+        }
+
+        .h-28 {
+            height: 7rem
+        }
+
+        .w-\[500px\] {
+            width: 500px
+        }
+
+        .min-w-\[500px\] {
+            min-width: 500px
+        }
+
+        .flex-1 {
+            flex: 1 1 0%
+        }
+
+        .flex-shrink-0 {
+            flex-shrink: 0
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .flex-col {
+            flex-direction: column
+        }
+
+        .items-center {
+            align-items: center
+        }
+
+        .justify-center {
+            justify-content: center
+        }
+
+        .justify-between {
+            justify-content: space-between
+        }
+
+        .gap-2 {
+            gap: 0.5rem
+        }
+
+        .gap-3 {
+            gap: 0.75rem
+        }
+
+        .gap-4 {
+            gap: 1rem
+        }
+
+        .space-y-4> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1rem * var(--tw-space-y-reverse))
+        }
+
+        .space-y-6> :not([hidden])~ :not([hidden]) {
+            --tw-space-y-reverse: 0;
+            margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+            margin-bottom: calc(1.5rem * var(--tw-space-y-reverse))
+        }
+
+        .overflow-hidden {
+            overflow: hidden
+        }
+
+        .overflow-y-auto {
+            overflow-y: auto
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem
+        }
+
+        .border-2 {
+            border-width: 2px
+        }
+
+        .border {
+            border-width: 1px
+        }
+
+        .border-b {
+            border-bottom-width: 1px
+        }
+
+        .border-r {
+            border-right-width: 1px
+        }
+
+        .border-indigo-600 {
+            --tw-border-opacity: 1;
+            border-color: rgb(79 70 229 / var(--tw-border-opacity, 1))
+        }
+
+        .border-slate-200 {
+            --tw-border-opacity: 1;
+            border-color: rgb(226 232 240 / var(--tw-border-opacity, 1))
+        }
+
+        .bg-indigo-600 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(79 70 229 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-slate-100 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-slate-200 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-slate-50 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-slate-800 {
+            --tw-bg-opacity: 1;
+            background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1))
+        }
+
+        .bg-white {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .p-12 {
+            padding: 3rem
+        }
+
+        .p-8 {
+            padding: 2rem
+        }
+
+        .p-4 {
+            padding: 1rem
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+        .px-5 {
+            padding-left: 1.25rem;
+            padding-right: 1.25rem
+        }
+
+        .px-6 {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem
+        }
+
+        .px-8 {
+            padding-left: 2rem;
+            padding-right: 2rem
+        }
+
+        .py-2 {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem
+        }
+
+        .pb-2 {
+            padding-bottom: 0.5rem
+        }
+
+        .text-center {
+            text-align: center
+        }
+
+        .text-3xl {
+            font-size: 1.875rem;
+            line-height: 2.25rem
+        }
+
+        .text-\[10px\] {
+            font-size: 10px
+        }
+
+        .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem
+        }
+
+        .text-2xl {
+            font-size: 1.5rem;
+            line-height: 2rem
+        }
+
+        .font-black {
+            font-weight: 900
+        }
+
+        .font-bold {
+            font-weight: 700
+        }
+
+        .font-semibold {
+            font-weight: 600
+        }
+
+        .font-medium {
+            font-weight: 500
+        }
+
+        .uppercase {
+            text-transform: uppercase
+        }
+
+        .italic {
+            font-style: italic
+        }
+
+        .leading-none {
+            line-height: 1
+        }
+
+        .tracking-widest {
+            letter-spacing: 0.1em
+        }
+
+        .tracking-tight {
+            letter-spacing: -0.025em
+        }
+
+        .text-indigo-600 {
+            --tw-text-opacity: 1;
+            color: rgb(79 70 229 / var(--tw-text-opacity, 1))
+        }
+
+        .text-slate-400 {
+            --tw-text-opacity: 1;
+            color: rgb(148 163 184 / var(--tw-text-opacity, 1))
+        }
+
+        .text-slate-700 {
+            --tw-text-opacity: 1;
+            color: rgb(51 65 85 / var(--tw-text-opacity, 1))
+        }
+
+        .text-slate-800 {
+            --tw-text-opacity: 1;
+            color: rgb(30 41 59 / var(--tw-text-opacity, 1))
+        }
+
+        .text-white {
+            --tw-text-opacity: 1;
+            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+        }
+
+        .text-slate-500 {
+            --tw-text-opacity: 1;
+            color: rgb(100 116 139 / var(--tw-text-opacity, 1))
+        }
+
+        .shadow-lg {
+            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .shadow-md {
+            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+        }
+
+        .transition-all {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms
+        }
+
+        .hover\:bg-black:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-indigo-50:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(238 242 255 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-indigo-700:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(67 56 202 / var(--tw-bg-opacity, 1))
+        }
+
+        .hover\:bg-slate-200:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgb(226 232 240 / var(--tw-bg-opacity, 1))
+        }
+    </style>
+</head>
+
+<body class="flex flex-col h-screen overflow-hidden">
+
+    <nav
+        class="no-print h-16 bg-white border-b border-slate-200 px-8 flex justify-between items-center flex-shrink-0 z-50 shadow-md">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-indigo-600 font-black text-3xl">task_alt</span>
+            <div>
+                <h1 class="text-lg font-bold text-slate-800 leading-none">ATS Pro Builder</h1>
+                <p class="text-[10px] text-slate-400 font-bold tracking-widest uppercase">Verified 1-Column Format</p>
+            </div>
+        </div>
+        <div class="flex gap-3">
+            <button
+                class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl font-semibold transition-all"
+                onclick="resetData()">
+                <span class="material-symbols-outlined text-sm">restart_alt</span> Reset
+            </button>
+            <!-- <button
+                class="flex items-center gap-2 bg-slate-800 hover:bg-black text-white px-5 py-2 rounded-xl font-bold transition-all shadow-lg"
+                onclick="downloadSource()">
+                <span class="material-symbols-outlined text-sm">code</span> Code
+            </button> -->
+            <button
+                class="flex items-center gap-2 bg-white border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-5 py-2 rounded-xl font-bold transition-all"
+                id="download-word">
+                <span class="material-symbols-outlined">description</span> .Docx
+            </button>
+            <button
+                class="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-xl font-bold shadow-lg transition-all"
+                onclick="window.print()">
+                <span class="material-symbols-outlined">picture_as_pdf</span> PDF Print
+            </button>
+        </div>
+    </nav>
+
+    <div class="flex flex-1 overflow-hidden">
+        <!-- LEFT SIDE: DYNAMIC EDITOR -->
+        <aside
+            class="no-print w-[500px] min-w-[500px] bg-slate-50 border-r border-slate-200 overflow-y-auto custom-scrollbar p-8">
+            <div id="editor-container">
+                <div class="mb-8">
+                    <h2 class="text-2xl font-black text-slate-800 tracking-tight uppercase">ATS Optimization Engine</h2>
+                    <p class="text-sm text-slate-500 font-medium italic">Strict 1-column layout. Minimal graphics.</p>
+                </div>
+
+                <!-- 1. PERSONAL -->
+                <div class="editor-card">
+                    <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-5 border-b pb-2">PERSONAL
+                        CONTACTS</h3>
+                    <div class="ats-tip">Tip: Ensure your job title matches the Job Description exactly.</div>
+                    <div class="space-y-4">
+                        <div class="input-group"><label>Full Name</label><input type="text" value="FULL NAME"
+                                oninput="updateProp('personal', 'name', this.value)"></div>
+                        <div class="input-group"><label>Target Job Title</label><input type="text"
+                                value="Full-stack Developer" oninput="updateProp('personal', 'role', this.value)"></div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="input-group"><label>Email</label><input type="text" value="email@example.com"
+                                    oninput="updateProp('personal', 'email', this.value)"></div>
+                            <div class="input-group"><label>Phone</label><input type="text" value="+91-XXXXXXXXXX"
+                                    oninput="updateProp('personal', 'phone', this.value)"></div>
+                        </div>
+                        <div class="input-group"><label>Social Links (LinkedIn | Portfolio)</label><input type="text"
+                                value="LinkedIn | GitHub | Portfolio"
+                                oninput="updateProp('personal', 'links', this.value)"></div>
+                    </div>
+                </div>
+
+                <!-- 2. SUMMARY -->
+                <div class="editor-card">
+                    <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PROFESSIONAL
+                        SUMMARY</h3>
+                    <div class="ats-tip">Tip: Keep to 2-3 lines. Include years of experience and core tech.</div>
+                    <textarea class="h-24"
+                        oninput="updateProp(null, 'summary', this.value)">Highly motivated Full-stack Developer with 2+ years of experience building scalable web applications and Artificial Intelligence (AI) automation. Proven track record in delivering user-centric SaaS platforms and Chrome Extensions with high-impact results.</textarea>
+                </div>
+
+                <!-- 3. SKILLS -->
+                <div class="editor-card">
+                    <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">TECHNICAL
+                        SKILLS</h3>
+                    <div class="ats-tip">Tip: List both long-form and abbreviations (e.g., Artificial Intelligence
+                        (AI)).</div>
+                    <div class="space-y-4">
+
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-3 right-3"
+                                onclick="removeArrayItem(null, 'skills', 0)">delete</span>
+                            <div class="input-group mb-2"><label>Category Name</label><input type="text"
+                                    value="Languages" oninput="updateArray(null, 'skills', 0, 'label', this.value)">
+                            </div>
+                            <div class="input-group"><label>Skills / Keywords</label><input type="text"
+                                    value="JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3"
+                                    oninput="updateArray(null, 'skills', 0, 'items', this.value)"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-3 right-3"
+                                onclick="removeArrayItem(null, 'skills', 1)">delete</span>
+                            <div class="input-group mb-2"><label>Category Name</label><input type="text"
+                                    value="Technical Tools"
+                                    oninput="updateArray(null, 'skills', 1, 'label', this.value)"></div>
+                            <div class="input-group"><label>Skills / Keywords</label><input type="text"
+                                    value="Node.js, Express, React.js, Next.js, Firebase, PostgreSQL"
+                                    oninput="updateArray(null, 'skills', 1, 'items', this.value)"></div>
+                        </div>
+
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-3 right-3"
+                                onclick="removeArrayItem(null, 'skills', 2)">delete</span>
+                            <div class="input-group mb-2"><label>Category Name</label><input type="text"
+                                    value="Cloud &amp; Deployment"
+                                    oninput="updateArray(null, 'skills', 2, 'label', this.value)"></div>
+                            <div class="input-group"><label>Skills / Keywords</label><input type="text"
+                                    value="Google Cloud Platform (GCP), Docker, Git, Vercel, RESTful APIs"
+                                    oninput="updateArray(null, 'skills', 2, 'items', this.value)"></div>
+                        </div>
+
+                        <div class="btn-add" onclick="addItem(null, 'skills', {label:'', items:''})">+ Add Skill
+                            Category</div>
+                    </div>
+                </div>
+
+                <!-- 4. EXPERIENCE -->
+                <div class="editor-card">
+                    <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PROFESSIONAL
+                        EXPERIENCE</h3>
+                    <div class="ats-tip">Tip: Quantify your impact (e.g., "Reduced time by 40%"). Use action verbs.
+                    </div>
+                    <div class="space-y-6">
+
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-4 right-4"
+                                onclick="removeArrayItem(null, 'experience', 0)">delete</span>
+                            <div class="input-group mb-2"><label>Job Title</label><input type="text"
+                                    value="Full-stack Developer"
+                                    oninput="updateArray(null, 'experience', 0, 'title', this.value)"></div>
+                            <div class="input-group mb-2"><label>Company</label><input type="text"
+                                    value="Tech Solutions Inc."
+                                    oninput="updateArray(null, 'experience', 0, 'company', this.value)"></div>
+                            <div class="input-group mb-2"><label>Dates (Jan 20XX – Dec 20XX)</label><input type="text"
+                                    value="Jan 2023 – Present"
+                                    oninput="updateArray(null, 'experience', 0, 'dates', this.value)"></div>
+                            <div class="input-group"><label>Achievements (One per line)</label><textarea class="h-28"
+                                    oninput="updateArray(null, 'experience', 0, 'bullets', this.value)">Developed an Artificial Intelligence (AI) certification platform using Gemini AI, reducing manual verification time by 40%.
+Automated backend certification tracking using SQL and Node.js, improving system reliability by 25%.
+Designed responsive UI components using React.js and Tailwind CSS for 5,000+ active users.</textarea></div>
+                        </div>
+
+                        <div class="btn-add"
+                            onclick="addItem(null, 'experience', {title:'', company:'', dates:'', bullets:''})">+ Add
+                            Experience</div>
+                    </div>
+                </div>
+
+                <!-- 5. PROJECTS -->
+                <div class="editor-card">
+                    <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PROJECTS
+                    </h3>
+                    <div class="space-y-6">
+
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-4 right-4"
+                                onclick="removeArrayItem(null, 'projects', 0)">delete</span>
+                            <div class="input-group mb-2"><label>Project Name</label><input type="text"
+                                    value="Google Classroom Productivity Extension"
+                                    oninput="updateArray(null, 'projects', 0, 'title', this.value)"></div>
+                            <div class="input-group mb-2"><label>Dates</label><input type="text"
+                                    value="Jun 2024 – Aug 2024"
+                                    oninput="updateArray(null, 'projects', 0, 'dates', this.value)"></div>
+                            <div class="input-group"><label>Key Impact Points (One per line)</label><textarea
+                                    class="h-24" oninput="updateArray(null, 'projects', 0, 'bullets', this.value)">Built a Chrome Extension using JavaScript and Chrome APIs to centralize educational resources.
+Integrated Google Drive API and Google Sheets API for real-time resource management.
+Reduced student context-switching time by 60% as measured by user engagement metrics.</textarea></div>
+                        </div>
+
+                        <div class="btn-add" onclick="addItem(null, 'projects', {title:'', dates:'', bullets:''})">+ Add
+                            Project</div>
+                    </div>
+                </div>
+
+                <!-- 6. EDUCATION -->
+                <div class="editor-card">
+                    <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">EDUCATION
+                    </h3>
+                    <div class="space-y-4">
+
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-3 right-3"
+                                onclick="removeArrayItem(null, 'education', 0)">delete</span>
+                            <div class="input-group mb-2"><label>Degree</label><input type="text"
+                                    value="Bachelor of Computer Science"
+                                    oninput="updateArray(null, 'education', 0, 'deg', this.value)"></div>
+                            <div class="input-group mb-2"><label>University</label><input type="text"
+                                    value="University of Technology"
+                                    oninput="updateArray(null, 'education', 0, 'uni', this.value)"></div>
+                            <div class="input-group"><label>Year</label><input type="text" value="Graduated: 2023"
+                                    oninput="updateArray(null, 'education', 0, 'year', this.value)"></div>
+                        </div>
+
+                        <div class="btn-add" onclick="addItem(null, 'education', {deg:'', uni:'', year:''})">+ Add
+                            Education</div>
+                    </div>
+                </div>
+
+                <!-- 7. ADDITIONAL -->
+                <div class="editor-card">
+                    <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">
+                        CERTIFICATIONS &amp; ACHIEVEMENTS</h3>
+                    <textarea class="h-32" oninput="updateProp(null, 'additional', this.value)">• Google Cloud Foundations Certified
+• Technical Writer: Published 10+ articles on Instructional Design and Automation
+• Contributor: Open-source GitHub projects for web performance</textarea>
+                </div>
+            </div>
+            <div class="h-32"></div>
+        </aside>
+
+        <!-- RIGHT SIDE: LIVE RESUME SHEET -->
+        <main class="flex-1 overflow-y-auto bg-slate-200 p-12 flex justify-center custom-scrollbar">
+            <div class="resume-sheet" id="resume-sheet">
+                <header class="text-center mb-6">
+                    <h1 style="font-size: 24pt; font-weight: bold; margin-bottom: 4pt; color: #111;">FULL NAME</h1>
+                    <p style="font-size: 14pt; font-weight: bold; color: #111; margin-bottom: 6pt;">Full-stack Developer
+                    </p>
+                    <p style="font-size: 10pt; color: #333;">
+                        email@example.com | +91-XXXXXXXXXX | LinkedIn | GitHub | Portfolio
+                    </p>
+                </header>
+
+                <section>
+                    <h2 class="section-heading">Professional Summary</h2>
+                    <p style="font-size: 10.5pt; color: #111; line-height: 1.4; text-align: justify;">Highly motivated
+                        Full-stack Developer with 2+ years of experience building scalable web applications and
+                        Artificial Intelligence (AI) automation. Proven track record in delivering user-centric SaaS
+                        platforms and Chrome Extensions with high-impact results.</p>
+                </section>
+
+                <section>
+                    <h2 class="section-heading">Technical Skills</h2>
+                    <div style="font-size: 10.5pt; line-height: 1.5;">
+
+                        <p><strong>Languages:</strong> JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3</p>
+
+                        <p><strong>Technical Tools:</strong> Node.js, Express, React.js, Next.js, Firebase, PostgreSQL
+                        </p>
+
+                        <p><strong>Cloud &amp; Deployment:</strong> Google Cloud Platform (GCP), Docker, Git, Vercel,
+                            RESTful APIs</p>
+
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="section-heading">Professional Experience</h2>
+
+                    <div style="margin-bottom: 12pt;">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 11pt;">
+                            <span>Full-stack Developer</span>
+                            <span>Jan 2023 – Present</span>
+                        </div>
+                        <div style="font-style: italic; font-size: 10.5pt; color: #444; margin-bottom: 4pt;">Tech
+                            Solutions Inc.</div>
+                        <ul style="list-style-type: disc; margin-left: 20pt; font-size: 10.5pt; line-height: 1.4;">
+                            <li>Developed an Artificial Intelligence (AI) certification platform using Gemini AI,
+                                reducing manual verification time by 40%.</li>
+                            <li>Automated backend certification tracking using SQL and Node.js, improving system
+                                reliability by 25%.</li>
+                            <li>Designed responsive UI components using React.js and Tailwind CSS for 5,000+ active
+                                users.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h2 class="section-heading">Projects</h2>
+
+                    <div style="margin-bottom: 10pt;">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 11pt;">
+                            <span>Google Classroom Productivity Extension</span>
+                            <span>Jun 2024 – Aug 2024</span>
+                        </div>
+                        <ul
+                            style="list-style-type: disc; margin-left: 20pt; font-size: 10.5pt; line-height: 1.4; margin-top: 2pt;">
+                            <li>Built a Chrome Extension using JavaScript and Chrome APIs to centralize educational
+                                resources.</li>
+                            <li>Integrated Google Drive API and Google Sheets API for real-time resource management.
+                            </li>
+                            <li>Reduced student context-switching time by 60% as measured by user engagement metrics.
+                            </li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h2 class="section-heading">Education</h2>
+
+                    <div style="display: flex; justify-content: space-between; font-size: 10.5pt; margin-bottom: 6pt;">
+                        <div>
+                            <strong>Bachelor of Computer Science</strong><br>
+                            University of Technology
+                        </div>
+                        <div style="font-weight: bold;">Graduated: 2023</div>
+                    </div>
+
+                </section>
+
+                <section>
+                    <h2 class="section-heading">Certifications &amp; Achievements</h2>
+                    <ul style="list-style-type: disc; margin-left: 20pt; font-size: 10.5pt; line-height: 1.4;">
+                        <li>Google Cloud Foundations Certified</li>
+                        <li>Technical Writer: Published 10+ articles on Instructional Design and Automation</li>
+                        <li>Contributor: Open-source GitHub projects for web performance</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        /**
+         * CENTRAL APPLICATION STATE - ATS COMPLIANT DATA STRUCTURE
+         */
+        let resumeData = {
+            personal: {
+                name: "FULL NAME",
+                role: "Full-stack Developer",
+                email: "email@example.com",
+                phone: "+91-XXXXXXXXXX",
+                links: "LinkedIn | GitHub | Portfolio"
+            },
+            summary: "Highly motivated Full-stack Developer with 2+ years of experience building scalable web applications and Artificial Intelligence (AI) automation. Proven track record in delivering user-centric SaaS platforms and Chrome Extensions with high-impact results.",
+            skills: [
+                { label: 'Languages', items: 'JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3' },
+                { label: 'Technical Tools', items: 'Node.js, Express, React.js, Next.js, Firebase, PostgreSQL' },
+                { label: 'Cloud & Deployment', items: 'Google Cloud Platform (GCP), Docker, Git, Vercel, RESTful APIs' }
+            ],
+            experience: [
+                {
+                    title: "Full-stack Developer",
+                    company: "Tech Solutions Inc.",
+                    dates: "Jan 2023 – Present",
+                    bullets: "Developed an Artificial Intelligence (AI) certification platform using Gemini AI, reducing manual verification time by 40%.\nAutomated backend certification tracking using SQL and Node.js, improving system reliability by 25%.\nDesigned responsive UI components using React.js and Tailwind CSS for 5,000+ active users."
+                }
+            ],
+            projects: [
+                {
+                    title: "Google Classroom Productivity Extension",
+                    dates: "Jun 2024 – Aug 2024",
+                    bullets: "Built a Chrome Extension using JavaScript and Chrome APIs to centralize educational resources.\nIntegrated Google Drive API and Google Sheets API for real-time resource management.\nReduced student context-switching time by 60% as measured by user engagement metrics."
+                }
+            ],
+            education: [
+                { deg: 'Bachelor of Computer Science', uni: 'University of Technology', year: 'Graduated: 2023' }
+            ],
+            additional: "• Google Cloud Foundations Certified\n• Technical Writer: Published 10+ articles on Instructional Design and Automation\n• Contributor: Open-source GitHub projects for web performance"
+        };
+
+        /**
+         * INITIALIZATION
+         */
+        function init() {
+            renderEditor();
+            renderResume();
+        }
+
+        /**
+         * UI RENDERING: EDITOR
+         */
+        function renderEditor() {
+            const container = document.getElementById('editor-container');
+            container.innerHTML = `
+            <div class="mb-8">
+                <h2 class="text-2xl font-black text-slate-800 tracking-tight uppercase">ATS Optimization Engine</h2>
+                <p class="text-sm text-slate-500 font-medium italic">Strict 1-column layout. Minimal graphics.</p>
+            </div>
+            
+            <!-- 1. PERSONAL -->
+            <div class="editor-card">
+                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-5 border-b pb-2">PERSONAL CONTACTS</h3>
+                <div class="ats-tip">Tip: Ensure your job title matches the Job Description exactly.</div>
+                <div class="space-y-4">
+                    <div class="input-group"><label>Full Name</label><input type="text" value="${resumeData.personal.name}" oninput="updateProp('personal', 'name', this.value)"></div>
+                    <div class="input-group"><label>Target Job Title</label><input type="text" value="${resumeData.personal.role}" oninput="updateProp('personal', 'role', this.value)"></div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="input-group"><label>Email</label><input type="text" value="${resumeData.personal.email}" oninput="updateProp('personal', 'email', this.value)"></div>
+                        <div class="input-group"><label>Phone</label><input type="text" value="${resumeData.personal.phone}" oninput="updateProp('personal', 'phone', this.value)"></div>
+                    </div>
+                    <div class="input-group"><label>Social Links (LinkedIn | Portfolio)</label><input type="text" value="${resumeData.personal.links}" oninput="updateProp('personal', 'links', this.value)"></div>
+                </div>
+            </div>
+
+            <!-- 2. SUMMARY -->
+            <div class="editor-card">
+                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PROFESSIONAL SUMMARY</h3>
+                <div class="ats-tip">Tip: Keep to 2-3 lines. Include years of experience and core tech.</div>
+                <textarea class="h-24" oninput="updateProp(null, 'summary', this.value)">${resumeData.summary}</textarea>
+            </div>
+
+            <!-- 3. SKILLS -->
+            <div class="editor-card">
+                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">TECHNICAL SKILLS</h3>
+                <div class="ats-tip">Tip: List both long-form and abbreviations (e.g., Artificial Intelligence (AI)).</div>
+                <div class="space-y-4">
+                    ${resumeData.skills.map((s, i) => `
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-3 right-3" onclick="removeArrayItem(null, 'skills', ${i})">delete</span>
+                            <div class="input-group mb-2"><label>Category Name</label><input type="text" value="${s.label}" oninput="updateArray(null, 'skills', ${i}, 'label', this.value)"></div>
+                            <div class="input-group"><label>Skills / Keywords</label><input type="text" value="${s.items}" oninput="updateArray(null, 'skills', ${i}, 'items', this.value)"></div>
+                        </div>
+                    `).join('')}
+                    <div class="btn-add" onclick="addItem(null, 'skills', {label:'', items:''})">+ Add Skill Category</div>
+                </div>
+            </div>
+
+            <!-- 4. EXPERIENCE -->
+            <div class="editor-card">
+                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PROFESSIONAL EXPERIENCE</h3>
+                <div class="ats-tip">Tip: Quantify your impact (e.g., "Reduced time by 40%"). Use action verbs.</div>
+                <div class="space-y-6">
+                    ${resumeData.experience.map((e, i) => `
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-4 right-4" onclick="removeArrayItem(null, 'experience', ${i})">delete</span>
+                            <div class="input-group mb-2"><label>Job Title</label><input type="text" value="${e.title}" oninput="updateArray(null, 'experience', ${i}, 'title', this.value)"></div>
+                            <div class="input-group mb-2"><label>Company</label><input type="text" value="${e.company}" oninput="updateArray(null, 'experience', ${i}, 'company', this.value)"></div>
+                            <div class="input-group mb-2"><label>Dates (Jan 20XX – Dec 20XX)</label><input type="text" value="${e.dates}" oninput="updateArray(null, 'experience', ${i}, 'dates', this.value)"></div>
+                            <div class="input-group"><label>Achievements (One per line)</label><textarea class="h-28" oninput="updateArray(null, 'experience', ${i}, 'bullets', this.value)">${e.bullets}</textarea></div>
+                        </div>
+                    `).join('')}
+                    <div class="btn-add" onclick="addItem(null, 'experience', {title:'', company:'', dates:'', bullets:''})">+ Add Experience</div>
+                </div>
+            </div>
+
+            <!-- 5. PROJECTS -->
+            <div class="editor-card">
+                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PROJECTS</h3>
+                <div class="space-y-6">
+                    ${resumeData.projects.map((p, i) => `
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-4 right-4" onclick="removeArrayItem(null, 'projects', ${i})">delete</span>
+                            <div class="input-group mb-2"><label>Project Name</label><input type="text" value="${p.title}" oninput="updateArray(null, 'projects', ${i}, 'title', this.value)"></div>
+                            <div class="input-group mb-2"><label>Dates</label><input type="text" value="${p.dates}" oninput="updateArray(null, 'projects', ${i}, 'dates', this.value)"></div>
+                            <div class="input-group"><label>Key Impact Points (One per line)</label><textarea class="h-24" oninput="updateArray(null, 'projects', ${i}, 'bullets', this.value)">${p.bullets}</textarea></div>
+                        </div>
+                    `).join('')}
+                    <div class="btn-add" onclick="addItem(null, 'projects', {title:'', dates:'', bullets:''})">+ Add Project</div>
+                </div>
+            </div>
+
+            <!-- 6. EDUCATION -->
+            <div class="editor-card">
+                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">EDUCATION</h3>
+                <div class="space-y-4">
+                    ${resumeData.education.map((e, i) => `
+                        <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl relative">
+                            <span class="material-symbols-outlined btn-remove absolute top-3 right-3" onclick="removeArrayItem(null, 'education', ${i})">delete</span>
+                            <div class="input-group mb-2"><label>Degree</label><input type="text" value="${e.deg}" oninput="updateArray(null, 'education', ${i}, 'deg', this.value)"></div>
+                            <div class="input-group mb-2"><label>University</label><input type="text" value="${e.uni}" oninput="updateArray(null, 'education', ${i}, 'uni', this.value)"></div>
+                            <div class="input-group"><label>Year</label><input type="text" value="${e.year}" oninput="updateArray(null, 'education', ${i}, 'year', this.value)"></div>
+                        </div>
+                    `).join('')}
+                    <div class="btn-add" onclick="addItem(null, 'education', {deg:'', uni:'', year:''})">+ Add Education</div>
+                </div>
+            </div>
+
+            <!-- 7. ADDITIONAL -->
+            <div class="editor-card">
+                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">CERTIFICATIONS & ACHIEVEMENTS</h3>
+                <textarea class="h-32" oninput="updateProp(null, 'additional', this.value)">${resumeData.additional}</textarea>
+            </div>
+        `;
+        }
+
+        /**
+         * UI RENDERING: ATS COMPLIANT RESUME SHEET
+         * One column. No graphics. Standard Arial/Helvetica style.
+         */
+        function renderResume() {
+            const sheet = document.getElementById('resume-sheet');
+            sheet.innerHTML = `
+            <header class="text-center mb-6">
+                <h1 style="font-size: 24pt; font-weight: bold; margin-bottom: 4pt; color: #111;">${resumeData.personal.name}</h1>
+                <p style="font-size: 14pt; font-weight: bold; color: #111; margin-bottom: 6pt;">${resumeData.personal.role}</p>
+                <p style="font-size: 10pt; color: #333;">
+                    ${resumeData.personal.email} | ${resumeData.personal.phone} | ${resumeData.personal.links}
+                </p>
+            </header>
+
+            <section>
+                <h2 class="section-heading">Professional Summary</h2>
+                <p style="font-size: 10.5pt; color: #111; line-height: 1.4; text-align: justify;">${resumeData.summary}</p>
+            </section>
+
+            <section>
+                <h2 class="section-heading">Technical Skills</h2>
+                <div style="font-size: 10.5pt; line-height: 1.5;">
+                    ${resumeData.skills.map(s => `
+                        <p><strong>${s.label}:</strong> ${s.items}</p>
+                    `).join('')}
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-heading">Professional Experience</h2>
+                ${resumeData.experience.map(e => `
+                    <div style="margin-bottom: 12pt;">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 11pt;">
+                            <span>${e.title}</span>
+                            <span>${e.dates}</span>
+                        </div>
+                        <div style="font-style: italic; font-size: 10.5pt; color: #444; margin-bottom: 4pt;">${e.company}</div>
+                        <ul style="list-style-type: disc; margin-left: 20pt; font-size: 10.5pt; line-height: 1.4;">
+                            ${e.bullets.split('\n').filter(l => l.trim()).map(line => `<li>${line.replace(/^[•*-]\s*/, "")}</li>`).join('')}
+                        </ul>
+                    </div>
+                `).join('')}
+            </section>
+
+            <section>
+                <h2 class="section-heading">Projects</h2>
+                ${resumeData.projects.map(p => `
+                    <div style="margin-bottom: 10pt;">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 11pt;">
+                            <span>${p.title}</span>
+                            <span>${p.dates}</span>
+                        </div>
+                        <ul style="list-style-type: disc; margin-left: 20pt; font-size: 10.5pt; line-height: 1.4; margin-top: 2pt;">
+                            ${p.bullets.split('\n').filter(l => l.trim()).map(line => `<li>${line.replace(/^[•*-]\s*/, "")}</li>`).join('')}
+                        </ul>
+                    </div>
+                `).join('')}
+            </section>
+
+            <section>
+                <h2 class="section-heading">Education</h2>
+                ${resumeData.education.map(e => `
+                    <div style="display: flex; justify-content: space-between; font-size: 10.5pt; margin-bottom: 6pt;">
+                        <div>
+                            <strong>${e.deg}</strong><br>
+                            ${e.uni}
+                        </div>
+                        <div style="font-weight: bold;">${e.year}</div>
+                    </div>
+                `).join('')}
+            </section>
+
+            <section>
+                <h2 class="section-heading">Certifications & Achievements</h2>
+                <ul style="list-style-type: disc; margin-left: 20pt; font-size: 10.5pt; line-height: 1.4;">
+                    ${resumeData.additional.split('\n').filter(l => l.trim()).map(line => `<li>${line.replace(/^[•*-]\s*/, "")}</li>`).join('')}
+                </ul>
+            </section>
+        `;
+        }
+
+        /**
+         * STATE MANAGEMENT
+         */
+        function updateProp(parent, key, value) {
+            if (parent) resumeData[parent][key] = value;
+            else resumeData[key] = value;
+            renderResume();
+        }
+
+        function updateArray(parent, key, index, field, value) {
+            if (parent) resumeData[parent][key][index][field] = value;
+            else resumeData[key][index][field] = value;
+            renderResume();
+        }
+
+        function addItem(parent, key, template) {
+            if (parent) resumeData[parent][key].push({ ...template });
+            else resumeData[key].push({ ...template });
+            renderAll();
+        }
+
+        function removeArrayItem(parent, key, index) {
+            if (parent) resumeData[parent][key].splice(index, 1);
+            else resumeData[key].splice(index, 1);
+            renderAll();
+        }
+
+        function renderAll() {
+            renderEditor();
+            renderResume();
+        }
+
+        function resetData() {
+            if (confirm("Confirm: This will reset all your entries to the default template.")) {
+                location.reload();
+            }
+        }
+
+        function downloadSource() {
+            const fullSource = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            const blob = new Blob([fullSource], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ATS_Resume_Builder_Project.html';
+            a.click();
+        }
+
+        /**
+         * MS WORD DOC EXPORT (.docx compliant doc)
+         */
+        document.getElementById('download-word').addEventListener('click', function () {
+            const resumeHTML = document.getElementById('resume-sheet').innerHTML;
+            const docHeader = `
+            <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+            <head><meta charset='utf-8'><title>ATS Resume</title>
+            <style>
+                body { font-family: 'Arial', sans-serif; font-size: 11pt; line-height: 1.2; padding: 0.5in; }
+                h1 { font-size: 24pt; text-align: center; text-transform: uppercase; font-weight: bold; margin-bottom: 2pt; }
+                header p { text-align: center; margin-bottom: 15pt; }
+                .section-heading { border-bottom: 1.5pt solid #111; text-transform: uppercase; font-weight: bold; font-size: 12pt; margin-top: 15pt; margin-bottom: 8pt; }
+                ul { margin-left: 20pt; }
+                p { text-align: justify; margin-bottom: 6pt; }
+                strong { font-weight: bold; }
+            </style>
+            </head><body>
+        `;
+            const blob = new Blob(['\ufeff', docHeader + resumeHTML + "</body></html>"], { type: 'application/msword' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `ATS_Resume_${resumeData.personal.name.replace(/\s+/g, '_')}.doc`;
+            link.click();
+        });
+
+        window.onload = init;
+    </script>
+
+
+</body>
+
+</html>
