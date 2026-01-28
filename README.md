@@ -19,7 +19,6 @@ An **ATS-optimized resume builder** that creates applicant tracking system (ATS)
 
 ### 📄 Export Options
 - **Word Document (.doc)** - Download as Microsoft Word compliant document
-- **HTML Source** - Download the complete HTML file for backup
 - **Print to PDF** - Browser-native print functionality preserves formatting
 
 ### 🎯 Resume Sections
@@ -33,7 +32,7 @@ An **ATS-optimized resume builder** that creates applicant tracking system (ATS)
 
 ## 🔧 How to Use
 
-1. **Open the file** - `ATS_Resume_Builder_Project.html` in any web browser
+1. **Open the file** - `index.html` in any web browser
 2. **Edit left panel** - Fill in your information section by section
 3. **Live preview updates** - Watch your resume update in real-time on the right
 4. **Download resume** - Click "Download as Word" or "Print to PDF"
@@ -172,7 +171,6 @@ The application uses a centralized data model (`resumeData`) that manages all re
 
 ### Looking for more features?
 - Reset to default template using "Reset Data" button
-- Download and backup your HTML file regularly
 - Consider using multiple versions for different industries
 
 ## 📄 Example Content Included
