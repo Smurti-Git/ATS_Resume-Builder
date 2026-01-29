@@ -3,13 +3,14 @@
          */
         let resumeData = {
             meta: { font: 'font-arial', margin: 0.6 },
-            personal: {
-                name: "YOUR FULL NAME",
-                role: "Full-stack Developer",
-                email: "email@example.com",
-                phone: "+91-XXXXXXXXXX",
-                links: "LinkedIn | GitHub | Portfolio"
-            },
+          personal: {
+    name: "YOUR FULL NAME",
+    role: "Full-stack Developer",
+    email: "email@example.com",
+    phone: "+91-XXXXXXXXXX",
+    location: "City, Country", // Add this line
+    links: "LinkedIn | GitHub | Portfolio"
+},
             summary: "Highly motivated Full-stack Developer with 2+ years of experience building scalable web applications and Artificial Intelligence (AI) automation. Proven track record in delivering user-centric SaaS platforms and Chrome Extensions.",
             skills: [
                 { label: 'Languages', items: 'JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3' },
@@ -70,19 +71,21 @@
             const container = document.getElementById('editor-container');
             container.innerHTML = `
             <!-- PERSONAL CONTACTS -->
-            <div class="editor-card">
-                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PERSONAL CONTACTS</h3>
-                <div class="ats-tip-box">Tip: Ensure your job title matches the Job Description exactly.</div>
-                <div class="space-y-3">
-                    <div class="input-group"><label>Full Name</label><input type="text" value="${resumeData.personal.name}" oninput="updateProp('personal', 'name', this.value)"></div>
-                    <div class="input-group"><label>Job Title</label><input type="text" value="${resumeData.personal.role}" oninput="updateProp('personal', 'role', this.value)"></div>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="input-group"><label>Email</label><input type="text" value="${resumeData.personal.email}" oninput="updateProp('personal', 'email', this.value)"></div>
-                        <div class="input-group"><label>Phone</label><input type="text" value="${resumeData.personal.phone}" oninput="updateProp('personal', 'phone', this.value)"></div>
-                    </div>
-                    <div class="input-group"><label>Social Links</label><input type="text" value="${resumeData.personal.links}" oninput="updateProp('personal', 'links', this.value)"></div>
-                </div>
-            </div>
+           <div class="editor-card">
+    <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PERSONAL CONTACTS</h3>
+    <div class="ats-tip-box">Tip: Ensure your job title matches the Job Description exactly.</div>
+    <div class="space-y-3">
+        <div class="input-group"><label>Full Name</label><input type="text" value="${resumeData.personal.name}" oninput="updateProp('personal', 'name', this.value)"></div>
+        <div class="input-group"><label>Job Title</label><input type="text" value="${resumeData.personal.role}" oninput="updateProp('personal', 'role', this.value)"></div>
+        <div class="grid grid-cols-3 gap-2"> <!-- Change from grid-cols-2 to grid-cols-3 -->
+            <div class="input-group"><label>Email</label><input type="text" value="${resumeData.personal.email}" oninput="updateProp('personal', 'email', this.value)"></div>
+            <div class="input-group"><label>Phone</label><input type="text" value="${resumeData.personal.phone}" oninput="updateProp('personal', 'phone', this.value)"></div>
+            <div class="input-group"><label>Location</label><input type="text" value="${resumeData.personal.location || ''}" oninput="updateProp('personal', 'location', this.value)"></div>
+        </div>
+        <div class="input-group"><label>Social Links</label><input type="text" value="${resumeData.personal.links}" oninput="updateProp('personal', 'links', this.value)"></div>
+    </div>
+</div>
+
 
             <!-- PROFESSIONAL SUMMARY -->
             <div class="editor-card">
@@ -109,7 +112,7 @@
 
             <!-- PROFESSIONAL EXPERIENCE -->
             <div class="editor-card">
-                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">PROFESSIONAL EXPERIENCE</h3>
+                <h3 class="flex items-center gap-2 font-bold text-slate-700 text-sm mb-4 border-b pb-2">EXPERIENCE</h3>
                 <div class="ats-tip-box">Tip: Start points with action verbs. Quantify with percentages/numbers.</div>
                 <div class="space-y-4">
                     ${resumeData.experience.map((e, i) => `
@@ -173,13 +176,17 @@
             document.body.style.setProperty('--print-padding', `${resumeData.meta.margin}in`);
 
             sheet.innerHTML = `
+          
             <header style="text-align: center; margin-bottom: 20pt;">
-                <h1 style="font-size: 24pt; font-weight: bold; margin-bottom: 4pt; color: #111; line-height: 1.1;">${resumeData.personal.name}</h1>
-                <p style="font-size: 14pt; font-weight: bold; color: #111; margin-bottom: 6pt;">${resumeData.personal.role}</p>
-                <p style="font-size: 10pt; color: #333;">
-                    ${resumeData.personal.email} | ${resumeData.personal.phone} | ${resumeData.personal.links}
-                </p>
-            </header>
+    <h1 style="font-size: 24pt; font-weight: bold; margin-bottom: 4pt; color: #111; line-height: 1.1;">${resumeData.personal.name}</h1>
+    <p style="font-size: 14pt; font-weight: bold; color: #111; margin-bottom: 6pt;">${resumeData.personal.role}</p>
+    <p style="font-size: 10pt; color: #333; margin-bottom: 2pt;">
+        ${resumeData.personal.email} | ${resumeData.personal.phone} | ${resumeData.personal.location}
+    </p>
+    <p style="font-size: 10pt; color: #333;">
+        ${resumeData.personal.links}
+    </p>
+</header>
 
             <section>
                 <h2 class="section-heading">Professional Summary</h2>
@@ -196,7 +203,7 @@
             </section>
 
             <section>
-                <h2 class="section-heading">Professional Experience</h2>
+                <h2 class="section-heading">Experience</h2>
                 ${resumeData.experience.map(e => `
                     <div style="margin-bottom: 12pt;">
                         <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 11pt;">
